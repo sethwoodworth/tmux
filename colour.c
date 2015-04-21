@@ -29,12 +29,6 @@
  * of the 256 colour palette.
  */
 
-/* An RGB colour. */
-struct colour_rgb {
-	u_char	r;
-	u_char	g;
-	u_char	b;
-};
 
 /* 256 colour RGB table, generated on first use. */
 struct colour_rgb *colour_rgb_256;

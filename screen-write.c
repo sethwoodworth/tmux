@@ -989,6 +989,7 @@ screen_write_cell(struct screen_write_ctx *ctx, const struct grid_cell *gc)
 		memcpy(&tmp_gc, &s->sel.cell, sizeof tmp_gc);
 		grid_cell_get(gc, &ud);
 		grid_cell_set(&tmp_gc, &ud);
+		//TODO
 		tmp_gc.flags = gc->flags & ~(GRID_FLAG_FG256|GRID_FLAG_BG256);
 		tmp_gc.flags |= s->sel.cell.flags &
 		    (GRID_FLAG_FG256|GRID_FLAG_BG256);

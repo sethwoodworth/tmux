@@ -675,9 +675,18 @@ struct utf8_data {
 #define GRID_FLAG_FG256 0x1
 #define GRID_FLAG_BG256 0x2
 #define GRID_FLAG_PADDING 0x4
+#define GRID_FLAG_FG24 0x8
+#define GRID_FLAG_BG24 0x10
 
 /* Grid line flags. */
 #define GRID_LINE_WRAPPED 0x1
+
+/* An RGB colour. */
+struct colour_rgb {
+	u_char	r;
+	u_char	g;
+	u_char	b;
+};
 
 /* Grid cell data. */
 struct grid_cell {
@@ -688,6 +697,8 @@ struct grid_cell {
 
 	u_char	xstate; /* top 4 bits width, bottom 4 bits size */
 	u_char	xdata[UTF8_SIZE];
+	struct colour_rgb fg_rgb;
+	struct colour_rgb bg_rgb;
 } __packed;
 
 /* Grid line. */
